@@ -51,7 +51,10 @@ func newMetricFamily(metricName string, mc MetadataCache) MetricFamily {
 
 	// lookup metadata based on familyName
 	metadata, ok := mc.Metadata(familyName)
-	if !ok && metricName != familyName {
+
+	if isInternalMetric(metricName) {
+		metadata.Type = textparse.MetricTypeGauge
+	} else if !ok && metricName != familyName {
 		// use the original metricName as metricFamily
 		familyName = metricName
 		// perform a 2nd lookup with the original metric name. it can happen if there's a metric which is not histogram

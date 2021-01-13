@@ -111,7 +111,7 @@ func (b *metricBuilder) AddDataPoint(ls labels.Labels, t int64, v float64) error
 					zap.String("target_labels", fmt.Sprintf("%v", lm)))
 			}
 		}
-		return nil
+		//return nil
 	case b.useStartTimeMetric && b.matchStartTimeMetric(metricName):
 		b.startTime = v
 	}
@@ -162,10 +162,10 @@ func isUsefulLabel(mType metricspb.MetricDescriptor_Type, labelKey string) bool 
 	result := false
 	switch labelKey {
 	case model.MetricNameLabel:
-	case model.InstanceLabel:
+	//case model.InstanceLabel:
 	case model.SchemeLabel:
 	case model.MetricsPathLabel:
-	case model.JobLabel:
+	//case model.JobLabel:
 	case model.BucketLabel:
 		result = mType != metricspb.MetricDescriptor_GAUGE_DISTRIBUTION &&
 			mType != metricspb.MetricDescriptor_CUMULATIVE_DISTRIBUTION
