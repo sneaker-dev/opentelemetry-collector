@@ -83,7 +83,7 @@ Maintainers ([@open-telemetry/collector-maintainers](https://github.com/orgs/ope
 
 Learn more about roles in the [community repository](https://github.com/open-telemetry/community/blob/master/community-membership.md).
 
-Thanks to all the people who already contributed!
+Thanks to all the people who already contributed...
 
 <a href="https://github.com/open-telemetry/opentelemetry-collector/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=open-telemetry/opentelemetry-collector" />
